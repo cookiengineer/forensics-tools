@@ -51,14 +51,23 @@ func main() {
 
 		repos := github.ToRepositories(user)
 
+		for r := 0; r < len(repos); r++ {
+
+			var repo = repos[r]
+
+			fmt.Println(repo.Name)
+
+			commits := github.ToCommits(user, repo.Name)
+
+			fmt.Println(commits)
+
+		}
+
 		// TODO: Sort repositories by Datetime, earliest first
 		// TODO: Filter repositories with IsFork == true
 		// TODO: for each in repositories
 		//       - ToCommits(api.Repository)
 		//       - ParseCommit() into Name, EMail etc
-
-		fmt.Println(user)
-		fmt.Println(repos)
 
 	}
 
