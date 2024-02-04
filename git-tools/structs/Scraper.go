@@ -162,6 +162,8 @@ func (scraper *Scraper) Request(url string) []byte {
 
 				if len(response.Header["Content-Type"]) > 0 {
 					content_type = response.Header["Content-Type"][0]
+				} else {
+					content_type = "application/octet-stream"
 				}
 
 				var valid bool = false
@@ -177,9 +179,9 @@ func (scraper *Scraper) Request(url string) []byte {
 
 				if valid == true {
 
-					data, err3 := ioutil.ReadAll(response.Body)
+					data, err2 := ioutil.ReadAll(response.Body)
 
-					if err3 == nil {
+					if err2 == nil {
 						buffer = data
 					}
 
