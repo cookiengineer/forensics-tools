@@ -14,6 +14,12 @@ func ToFilename(value string) string {
 			result += character
 		} else if character >= "a" && character <= "z" {
 			result += character
+		} else if character == " " {
+			result += "+"
+		} else if character == "-" {
+			result += character
+		} else if character == "+" {
+			result += character
 		} else if character == ":" {
 			result += character
 		} else if character == "/" {
