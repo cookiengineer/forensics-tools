@@ -7,6 +7,11 @@ the spectrum of operating systems and tech stacks that are used by my customers,
 there's no guarantee that they will work whatsoever.
 
 
+## Git Tools
+
+The [Git Tools](./git-tools) are useful for OSINT gathering on public repositories,
+such as on BitBucket, GitHub or GitLab.
+
 ## SQL Tools
 
 The [SQL Tools](./sql-tools) are useful for working with extremely large SQL file dumps
@@ -17,6 +22,9 @@ sql-tables large-dump.sql;             # list of table names
 sql-extract large-dump.sql table-name; # extracts a specific table and its data
 ```
 
+## Torrent Tools
+
+The [Torrent Tools](./torrent-tools) allow to inspect and modify `magnet:` URLs.
 
 ## Chrome/Chromium Extension Extractor
 
