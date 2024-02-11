@@ -26,6 +26,16 @@ sql-extract large-dump.sql table-name; # extracts a specific table and its data
 
 The [Torrent Tools](./torrent-tools) allow to inspect and modify `magnet:` URLs.
 
+## TOTP Tools
+
+The [TOTP Tools](totp-tools) allow to export encoded `otp-migration://` 2FA seeds
+from screenshots or camera photos into a `json` file and a QRCode `png` that can
+be used to import them within other password managers.
+
+```bash
+totp-extract ./path/to/camera-photo-of-qrcode.jpg;
+```
+
 ## Chrome/Chromium Extension Extractor
 
 The [uncrx](./uncrx) tool is useful for extracting a `.crx` file which is compressed in
