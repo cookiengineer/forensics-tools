@@ -112,27 +112,38 @@ func main() {
 
 	}
 
-	var maxlength int = 0
+	if len(filtered) > 0 {
 
-	for f := 0; f < len(filtered); f++ {
+		var maxlength int = 6
 
-		if len(filtered[f]) > maxlength {
-			maxlength = len(filtered[f])
+		for f := 0; f < len(filtered); f++ {
+
+			if len(filtered[f]) > maxlength {
+				maxlength = len(filtered[f])
+			}
+
 		}
 
-	}
+		fmt.Println("Domain" + Whitespace[0:(maxlength - 6)] + " |    Date    | ")
 
-	fmt.Println("Domain" + Whitespace[0:(maxlength - 6)] + " |    Date    | ")
+		for f := 0; f < len(filtered); f++ {
 
-	for f := 0; f < len(filtered); f++ {
+			domain := filtered[f]
+			timestamp := Domains[domain]
 
-		domain := filtered[f]
-		timestamp := Domains[domain]
+			length := len(domain)
+			offset := Whitespace[0:(maxlength - length)]
 
-		length := len(domain)
-		offset := Whitespace[0:(maxlength - length)]
+			fmt.Println(domain + offset + " | " + timestamp + " | ")
 
-		fmt.Println(domain + offset + " | " + timestamp + " | ")
+		}
+
+		os.Exit(0)
+
+	} else {
+
+		fmt.Println("(No Results)")
+		os.Exit(1)
 
 	}
 
