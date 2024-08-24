@@ -49,6 +49,7 @@ func main() {
 	if len(os.Args) == 2 {
 
 		var search_prefix string
+		var search_midfix string
 		var search_suffix string
 
 		if strings.HasPrefix(os.Args[1], "*") {
@@ -68,6 +69,8 @@ func main() {
 				search_suffix = tmp[0]
 			}
 
+		} else {
+			search_midfix = os.Args[1]
 		}
 
 		for domain := range Domains {
@@ -87,6 +90,12 @@ func main() {
 			} else if search_suffix != "" {
 
 				if strings.HasSuffix(domain, search_suffix) {
+					filtered = append(filtered, domain)
+				}
+
+			} else if search_midfix != "" {
+
+				if strings.Contains(domain, search_midfix) {
 					filtered = append(filtered, domain)
 				}
 
