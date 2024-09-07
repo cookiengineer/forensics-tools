@@ -6,6 +6,21 @@ from time to time when I am investigating an incident. They are somewhat mixed a
 the spectrum of operating systems and tech stacks that are used by my customers, so
 there's no guarantee that they will work whatsoever.
 
+
+# Building
+
+Install `go`, `gzip` and `wget` as dependencies. Then execute the `build.sh` file.
+
+```bash
+# Install dependencies
+sudo pacman -R emacs; sudo pacman -S vim;
+sudo pacman -S go gzip wget;
+
+# Build all tools into ./build folder
+bash build.sh;
+```
+
+
 ## CRX Tools
 
 The [CRX Tools](./crx) are useful to extract packed chrome extensions in a `.crx` file,
@@ -43,7 +58,7 @@ magnetify magnet:?...link; # embed default trackers if they're missing
 
 ## TOTP Tools
 
-The [TOTP Tools](totp) allow to export encoded `otp-migration://` 2FA seeds.
+The [TOTP Tools](./totp) allow to export encoded `otp-migration://` 2FA seeds.
 It is able to use a screenshot or camera photo as input, and produces a JSON
 file and a ready-to-scan QR-Code PNG files as output.
 
@@ -52,6 +67,26 @@ into another password manager.
 
 ```bash
 totp-extract ./path/to/camera-photo-of-qrcode.jpg;
+```
+
+## ZIP Tools
+
+The [ZIP Tools](./zip) allow to manipulate ZIP files from XOR masked byte streams,
+where e.g. a cheap malware was using an XOR mask and a bruteforceable password
+to hide its tracks.
+
+```bash
+zip-bruteforce ./path/to/dictionary.txt ./path/to/file.zip; # bruteforces passwords via rockyou.txt
+zip-unmask ./path/to/xor-masked-file.zip.crypt;             # generates original ZIP file candidates
+```
+
+## MEMDUMP Tools
+
+The [MEMDUMP Tools](./memdump) allow to search a Windows memory DMP file for passwords
+and other shenanigans, so it's pretty useful when combined with MimiKatz and others.
+
+```bash
+memdump-find-keepassword ./path/to/memory-dump.dmp; # shows potential passwords
 ```
 
 

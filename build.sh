@@ -46,6 +46,16 @@ build() {
 }
 
 
+if [[ ! -f "${ROOT}/zip/cmds/zip-bruteforce/passwords.txt.gz" ]]; then
+
+	wget https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt -O "${ROOT}/zip/cmds/zip-bruteforce/passwords.txt";
+
+	cd "${ROOT}/zip/cmds/zip-bruteforce";
+	gzip "passwords.txt";
+	cd "${ROOT}";
+
+fi;
+
 
 if [[ "$GO" != "" ]]; then
 
@@ -61,6 +71,9 @@ if [[ "$GO" != "" ]]; then
 	build "linux" "amd64" "totp" "cmds/totp-export";
 
 	build "linux" "amd64" "crx" "cmds/uncrx";
+
+	build "linux" "amd64" "zip" "cmds/zip-bruteforce";
+	build "linux" "amd64" "zip" "cmds/zip-unmask";
 
 else
 	echo "Please install go(lang) compiler.";
