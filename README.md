@@ -1,7 +1,7 @@
 
 # Forensics Tools
 
-<img align="right" width="128" height="128" src="https://raw.githubusercontent.com/cookiengineer/forensics-tools/main/assets/forensics-tools.jpg">
+<img align="right" width="128" height="128" src="https://raw.githubusercontent.com/cookiengineer/forensics-tools/master/assets/forensics-tools.jpg">
 
 This is my mono repository containing some of my personal forensics tools that I need
 from time to time when I am investigating an incident. They are somewhat mixed across
