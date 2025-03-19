@@ -39,6 +39,16 @@ uncrx "$EXTENSION_NAME.crx":                        # creates the $EXTENSION_NAM
 unzip "$EXTENSION_NAME.zip" -d "./$EXTENSION_NAME"; # unpack the extension, so that it can be loaded in Developer Mode
 ```
 
+## DynDNS Tools
+
+The [DynDNS Tools](./dyndns) are useful for creating an IPv4/IPv6 tunnel through a DynDNS
+domain. Currently it only support goip as a backend API.
+
+```bash
+# update IPv6 entry
+goip-updater --username=john_doe --password=password123 --subdomain=whatever;
+```
+
 ## SQL Tools
 
 The [SQL Tools](./sqltools) are useful for working with extremely large SQL file dumps
