@@ -13,11 +13,11 @@ func showUsage() {
 	fmt.Println("")
 	fmt.Println("    --username=\"...\"   Account Username")
 	fmt.Println("    --password=\"...\"   Account Password")
-	fmt.Println("    --subdomain=\"...\"  GoIP Subdomain (without .goip.de)")
+	fmt.Println("    --subdomain=\"...\"  GoIP Subdomain (with .goip.de)")
 	fmt.Println("")
 	fmt.Println("example:")
 	fmt.Println("")
-	fmt.Println("    goip-updater --username=\"john_doe\" --password=\"password123\" --subdomain=\"myserver\";")
+	fmt.Println("    goip-updater --username=\"john_doe\" --password=\"password123\" --subdomain=\"myserver.goip.de\";")
 	fmt.Println("")
 }
 
@@ -65,7 +65,7 @@ func main() {
 					tmp2 = tmp2[1:len(tmp2)-1]
 				}
 
-				if tmp2 != "" && !strings.Contains(tmp2, ".") {
+				if tmp2 != "" && strings.HasSuffix(tmp2, ".goip.de") {
 					subdomain = tmp2
 				}
 
@@ -100,13 +100,11 @@ func main() {
 
 					tmp := strings.TrimSpace(line[6:strings.Index(line, " scope")])
 
-					if tmp != "" {
+					if tmp != "" && strings.HasSuffix(tmp, "/64") {
 
-						if strings.Contains(tmp, "/") {
-							tmp = tmp[0:strings.Index(tmp, "/")]
-						}
-
+						tmp = tmp[0:strings.Index(tmp, "/")]
 						ipv6 = tmp
+
 						break
 
 					}
@@ -124,15 +122,13 @@ func main() {
 					"?username=" + username,
 					"&password=" + password,
 					"&subdomain=" + subdomain,
-					"&ip=" + ipv6,
-					"&ttl=2000",
+					"&ip6=" + ipv6,
+					// "&ttl=2000",
 				}, ""), nil)
 
 				if err1 == nil {
 
 					request.Header.Add("User-Agent", "Cookie's DynDNS Updater")
-					request.Header.Add("X-Admin",    "Thank you for your service <3")
-					request.Header.Add("X-Source",   "https://github.com/cookiengineer/forensics-tools")
 
 					response, err2 := client.Do(request)
 
