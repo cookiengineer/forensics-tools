@@ -49,6 +49,18 @@ domain. Currently it only support goip as a backend API.
 goip-updater --username=john_doe --password=password123 --subdomain=whatever;
 ```
 
+## Reddit Tools
+
+The [Reddit Tools](./reddit) are useful to search, discover, and scrape reddit threads containing
+specific keywords. Currently it only supports the old reddit JSON format, because the
+new API is a paid-for API.
+
+```bash
+# scrape /r/cybersecurity top/hot/new threads
+echo "[\"CVE\",\"breach\"]" > keywords.json;
+reddit-archivar /r/cybersecurity;
+```
+
 ## SQL Tools
 
 The [SQL Tools](./sqltools) are useful for working with extremely large SQL file dumps
