@@ -1,117 +1,48 @@
 
-# Forensics Tools
+# Cookie Engineer's Forensics Tools
 
-<img align="right" width="128" height="128" src="https://raw.githubusercontent.com/cookiengineer/forensics-tools/master/assets/forensics-tools.jpg">
+<p align="center">
+    <img width="256" height="256" src="https://raw.githubusercontent.com/cookiengineer/forensics-tools/master/assets/forensics-tools.jpg">
+</p>
 
-This is my mono repository containing some of my personal forensics tools that I need
-from time to time when I am investigating an incident. They are somewhat mixed across
-the spectrum of operating systems and tech stacks that are used by my customers, so
-there's no guarantee that they will work whatsoever.
+This is my mono repository containing my personal forensics tools that I need when I'm
+investigating an incident. They are something like a better `bashrc`, implemented in Go,
+without any kind of warranty to work at all.
 
+The [tools](/tools) folder is separated by use-case. Each of the tools' root folder contains
+a `README.md` explaining the purpose of the forensics tools inside them. Make sure to read
+them carefully.
 
-# Building
+The [toolchain](/toolchain) folder contains two entry points:
 
-Install `go`, `gzip` and `wget` as dependencies. Then execute the `build.sh` file.
-
-```bash
-# Install dependencies
-sudo pacman -R emacs; sudo pacman -S vim;
-sudo pacman -S go gzip wget;
-
-# Build all tools into ./build folder
-bash build.sh;
-```
+- The [build.go](/toolchain/build.go) which builds all binaries and a separate `install-forensics-tools` program.
+- The [install.go](/toolchain/install.go) which builds and installs a specific binary of a `<tool>/<cmd>` path.
 
 
-## CRX Tools
+## Tools / Features
 
-The [CRX Tools](./crx) are useful to extract packed chrome extensions in a `.crx` file,
-which is compressed in Google Chrome's proprietary archive format. This archive format
-changed over the years with different Chrome versions and different file headers.
-
-```bash
-export EXTENSION_ID="cjpalhdlnbpafiamejdnhcphjbkeiagm";
-export EXTENSION_NAME="ublock-origin";
-
-wget -O "$EXTENSION_NAME.crx" "https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=100&x=id%3D$EXTENSION_ID%26uc";
-
-uncrx "$EXTENSION_NAME.crx":                        # creates the $EXTENSION_NAME.zip file in the same folder
-unzip "$EXTENSION_NAME.zip" -d "./$EXTENSION_NAME"; # unpack the extension, so that it can be loaded in Developer Mode
-```
-
-## DynDNS Tools
-
-The [DynDNS Tools](./dyndns) are useful for creating an IPv4/IPv6 tunnel through a DynDNS
-domain. Currently it only support goip as a backend API.
-
-```bash
-# update IPv6 entry
-goip-updater --username=john_doe --password=password123 --subdomain=whatever;
-```
-
-## Reddit Tools
-
-The [Reddit Tools](./reddit) are useful to search, discover, and scrape reddit threads containing
-specific keywords. Currently it only supports the old reddit JSON format, because the
-new API is a paid-for API.
-
-```bash
-# scrape /r/cybersecurity top/hot/new threads
-echo "[\"CVE\",\"breach\"]" > keywords.json;
-reddit-archivar /r/cybersecurity;
-```
-
-## SQL Tools
-
-The [SQL Tools](./sqltools) are useful for working with extremely large SQL file dumps
-that are too huge to be opened at once.
-
-```bash
-sql-tables large-dump.sql;             # list of table names
-sql-extract large-dump.sql table-name; # extracts a specific table and its data
-```
-
-## Torrent Tools
-
-The [Torrent Tools](./torrent) allow to inspect and modify `magnet:` URLs,
-and to embed a list of default trackers and web URLs.
-
-```bash
-magnetify magnet:?...link; # embed default trackers if they're missing
-```
-
-## TOTP Tools
-
-The [TOTP Tools](./totp) allow to export encoded `otp-migration://` 2FA seeds.
-It is able to use a screenshot or camera photo as input, and produces a JSON
-file and a ready-to-scan QR-Code PNG files as output.
-
-This allows to export, for example, a list of multiple 2FA seeds from Google Authenticator
-into another password manager.
-
-```bash
-totp-extract ./path/to/camera-photo-of-qrcode.jpg;
-```
-
-## ZIP Tools
-
-The [ZIP Tools](./zip) allow to manipulate ZIP files from XOR masked byte streams,
-where e.g. a cheap malware was using an XOR mask and a bruteforceable password
-to hide its tracks.
-
-```bash
-zip-bruteforce ./path/to/dictionary.txt ./path/to/file.zip; # bruteforces passwords via rockyou.txt
-zip-unmask ./path/to/xor-masked-file.zip.crypt;             # generates original ZIP file candidates
-```
-
-## MEMDUMP Tools
-
-The [MEMDUMP Tools](./memdump) allow to search a Windows memory DMP file for passwords
-and other shenanigans, so it's pretty useful when combined with MimiKatz and others.
-
-```bash
-memdump-find-keepassword ./path/to/memory-dump.dmp; # shows potential passwords
-```
+- [archive-pack](/tools/archive/cmds/archive-pack/main.go) packs any known archive files
+- [archive-unpack](/tools/archive/cmds/archive-unpack/main.go) unpacks any known archive files
+- [crx-dl](/tools/crx/cmds/crx-dl/main.go) downloads Chromium extension files
+- [crx-extract](/tools/crx/cmds/crx-extract/main.go) extracts Chromium extension files
+- [ffmpeg-to720p](/tools/ffmpeg/cmds/ffmpeg-to720p) converts videos to x264 720p videos
+- [ffmpeg-to1080p](/tools/ffmpeg/cmds/ffmpeg-to1080p) converts videos to x264 1080p videos
+- [ffmpeg-tomp3](/tools/ffmpeg/cmds/ffmpeg-tomp3) converts videos to mp3 files
+- [git-serve](/tools/git/cmds/git-extract/main.go) serves a local git server
+- [dyndns-goip](/tools/dyndns/cmds/dyndns-goip/main.go) updates `goip.de` DynDNS domains
+- [gs-totiff](/tools/gs/cmds/gs-totiff/main.go) converts documents to tiff images
+- [http-serve](/tools/http/cmds/http-serve/main.go) serves a folder via HTTP
+- [memdump-keepass](/tools/memdump/cmds/memdump-keepass/main.go) finds a KeePass(XC) password in memory dump files
+- [npm-dl](/tools/npm/cmds/npm-dl/main.go) downloads and extracts specific package versions from NPM
+- [reddit-archive](/tools/reddit/cmds/reddit-archive/main.go) downloads subreddits and threads
+- [sql-extract](/tools/sql/cmds/sql-extract/main.go) extracts a specific table from SQL dump files
+- [torrent-magnetify](/tools/torrent/cmds/torrent-magnetify/main.go) adds default trackers to torrent magnet links
+- [totp-extract](/tools/totp/cmds/totp-extract/main.go) extracts OTP password seeds from screenshots or camera photos of QR codes
+- [youtube-mp3](/tools/yt-dlp/cmds/youtube-mp3/main.go) downloads streams as MP3 files
+- [youtube-mp4](/tools/yt-dlp/cmds/youtube-mp4/main.go) downloads streams as MP4 files
+- [youtube-opus](/tools/yt-dlp/cmds/youtube-opus/main.go) downloads streams as OPUS files
+- [zip-bruteforce](/tools/totp/cmds/zip-bruteforce/main.go) bruteforces the password of a ZIP file
+- [zip-unmask](/tools/totp/cmds/zip-unmask/main.go) unmasks ZIP files that have been XOR obfuscated
 
 
 ## License
