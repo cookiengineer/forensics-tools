@@ -10,7 +10,7 @@ func showUsage() {
 	fmt.Println("")
 	fmt.Println("Usage Notes:")
 	fmt.Println("")
-	fmt.Println("    This tool will search for a KeePass password in a raw memdump")
+	fmt.Println("    This tool searches for a KeePass password in a raw memdump.")
 	fmt.Println("    Supported formats are raw memory dumps (e.g. WinDbg, MiniDumpWriteDump, dd)")
 	fmt.Println("")
 	fmt.Println("Examples:")

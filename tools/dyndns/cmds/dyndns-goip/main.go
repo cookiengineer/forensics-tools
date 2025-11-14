@@ -27,7 +27,7 @@ func showUsage() {
 	fmt.Println("")
 	fmt.Println("Usage Notes:")
 	fmt.Println("")
-	fmt.Println("    This tool will set the public IPv6 of this machine to an AAAA entry for a specified a goip.de subdomain")
+	fmt.Println("    This tool sets the public IPv6 of this machine to an AAAA entry for a specified a goip.de subdomain.")
 	fmt.Println("")
 	fmt.Println("Examples:")
 	fmt.Println("")

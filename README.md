@@ -21,28 +21,29 @@ The [toolchain](/toolchain) folder contains two entry points:
 
 ## Tools / Features
 
-- [archive-pack](/tools/archive/cmds/archive-pack/main.go) packs any known archive files
-- [archive-unpack](/tools/archive/cmds/archive-unpack/main.go) unpacks any known archive files
-- [crx-dl](/tools/crx/cmds/crx-dl/main.go) downloads Chromium extension files
-- [crx-extract](/tools/crx/cmds/crx-extract/main.go) extracts Chromium extension files
-- [ffmpeg-to720p](/tools/ffmpeg/cmds/ffmpeg-to720p) converts videos to x264 720p videos
-- [ffmpeg-to1080p](/tools/ffmpeg/cmds/ffmpeg-to1080p) converts videos to x264 1080p videos
-- [ffmpeg-tomp3](/tools/ffmpeg/cmds/ffmpeg-tomp3) converts videos to mp3 files
-- [git-serve](/tools/git/cmds/git-extract/main.go) serves a local git server
-- [dyndns-goip](/tools/dyndns/cmds/dyndns-goip/main.go) updates `goip.de` DynDNS domains
-- [gs-totiff](/tools/gs/cmds/gs-totiff/main.go) converts documents to tiff images
-- [http-serve](/tools/http/cmds/http-serve/main.go) serves a folder via HTTP
-- [memdump-keepass](/tools/memdump/cmds/memdump-keepass/main.go) finds a KeePass(XC) password in memory dump files
-- [npm-dl](/tools/npm/cmds/npm-dl/main.go) downloads and extracts specific package versions from NPM
-- [reddit-archive](/tools/reddit/cmds/reddit-archive/main.go) downloads subreddits and threads
-- [sql-extract](/tools/sql/cmds/sql-extract/main.go) extracts a specific table from SQL dump files
-- [torrent-magnetify](/tools/torrent/cmds/torrent-magnetify/main.go) adds default trackers to torrent magnet links
-- [totp-extract](/tools/totp/cmds/totp-extract/main.go) extracts OTP password seeds from screenshots or camera photos of QR codes
-- [youtube-mp3](/tools/yt-dlp/cmds/youtube-mp3/main.go) downloads streams as MP3 files
-- [youtube-mp4](/tools/yt-dlp/cmds/youtube-mp4/main.go) downloads streams as MP4 files
-- [youtube-opus](/tools/yt-dlp/cmds/youtube-opus/main.go) downloads streams as OPUS files
-- [zip-bruteforce](/tools/totp/cmds/zip-bruteforce/main.go) bruteforces the password of a ZIP file
-- [zip-unmask](/tools/totp/cmds/zip-unmask/main.go) unmasks ZIP files that have been XOR obfuscated
+- [ ] [archive-pack](/tools/archive/cmds/archive-pack/main.go) packs any known archive files
+- [ ] [archive-unpack](/tools/archive/cmds/archive-unpack/main.go) unpacks any known archive files
+- [x] [crx-dl](/tools/crx/cmds/crx-dl/main.go) downloads Chromium extension files
+- [x] [crx-extract](/tools/crx/cmds/crx-extract/main.go) extracts Chromium extension files
+- [ ] [ffmpeg-to720p](/tools/ffmpeg/cmds/ffmpeg-to720p) converts videos to x264 720p videos
+- [ ] [ffmpeg-to1080p](/tools/ffmpeg/cmds/ffmpeg-to1080p) converts videos to x264 1080p videos
+- [ ] [ffmpeg-tomp3](/tools/ffmpeg/cmds/ffmpeg-tomp3) converts videos to mp3 files
+- [ ] [git-serve](/tools/git/cmds/git-extract/main.go) serves a local git server
+- [x] [dyndns-goip](/tools/dyndns/cmds/dyndns-goip/main.go) updates `goip.de` DynDNS domains
+- [ ] [gs-totiff](/tools/gs/cmds/gs-totiff/main.go) converts documents to tiff images
+- [x] [http-serve](/tools/http/cmds/http-serve/main.go) serves a folder via HTTP
+- [x] [memdump-keepass](/tools/memdump/cmds/memdump-keepass/main.go) finds a KeePass(XC) password in memory dump files
+- [ ] [npm-dl](/tools/npm/cmds/npm-dl/main.go) downloads and extracts specific package versions from NPM
+- [ ] [reddit-archive](/tools/reddit/cmds/reddit-archive/main.go) downloads subreddits and threads
+- [x] [sql-extract](/tools/sql/cmds/sql-extract/main.go) extracts a specific table from large SQL dump files
+- [x] [sql-tables](/tools/sql/cmds/sql-tables/main.go) lists a table index of large SQL dump files
+- [x] [torrent-magnetify](/tools/torrent/cmds/torrent-magnetify/main.go) adds default trackers to torrent magnet links
+- [x] [totp-extract](/tools/totp/cmds/totp-extract/main.go) extracts OTP password seeds from screenshots or camera photos of QR codes
+- [ ] [youtube-mp3](/tools/yt-dlp/cmds/youtube-mp3/main.go) downloads streams as MP3 files
+- [ ] [youtube-mp4](/tools/yt-dlp/cmds/youtube-mp4/main.go) downloads streams as MP4 files
+- [ ] [youtube-opus](/tools/yt-dlp/cmds/youtube-opus/main.go) downloads streams as OPUS files
+- [x] [zip-bruteforce](/tools/totp/cmds/zip-bruteforce/main.go) bruteforces the password of a ZIP file
+- [x] [zip-unmask](/tools/totp/cmds/zip-unmask/main.go) unmasks ZIP files that have been XOR obfuscated
 
 
 ## License

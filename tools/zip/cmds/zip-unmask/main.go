@@ -17,7 +17,7 @@ func showUsage() {
 	fmt.Println("")
 	fmt.Println("Usage Notes:")
 	fmt.Println("")
-	fmt.Println("    This tool will try all possible XOR bitmasks and create unmasked .zip files in the same folder.")
+	fmt.Println("    This tool tries all possible XOR bitmasks and creates unmasked .zip files in the same folder.")
 	fmt.Println("    Supported are only XOR bitmask keys lower than or equal 32 bits.")
 	fmt.Println("")
 	fmt.Println("Examples:")

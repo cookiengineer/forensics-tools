@@ -12,7 +12,7 @@ func showUsage() {
 	fmt.Println("")
 	fmt.Println("Usage Notes:")
 	fmt.Println("")
-	fmt.Println("    This tool will create a .zip file in the same folder where the .crx file is located")
+	fmt.Println("    This tool extracts a .crx file's ZIP data into a .zip file in the same folder.")
 	fmt.Println("")
 	fmt.Println("Examples:")
 	fmt.Println("")

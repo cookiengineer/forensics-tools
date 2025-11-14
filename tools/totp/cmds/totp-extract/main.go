@@ -16,7 +16,7 @@ func showUsage() {
 	fmt.Println("")
 	fmt.Println("Usage Notes:")
 	fmt.Println("")
-	fmt.Println("    This tool will export a photo of a QR code that contains encoded \"otp-migration://\" 2FA seeds.")
+	fmt.Println("    This tool exports a photo of a QR code that contains encoded \"otp-migration://\" 2FA seeds.")
 	fmt.Println("    Supported 2FA apps are e.g. Google Authenticator, Aegis and others.")
 	fmt.Println("")
 	fmt.Println("Examples:")

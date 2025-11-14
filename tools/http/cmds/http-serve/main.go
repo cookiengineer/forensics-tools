@@ -11,7 +11,7 @@ func showUsage() {
 	fmt.Println("")
 	fmt.Println("Usage Notes:")
 	fmt.Println("")
-	fmt.Println("    This tool will serve the current folder via HTTP")
+	fmt.Println("    This tool serves the current folder via HTTP.")
 	fmt.Println("")
 	fmt.Println("Examples:")
 	fmt.Println("")
