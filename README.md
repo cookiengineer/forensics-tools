@@ -25,9 +25,10 @@ The [toolchain](/toolchain) folder contains two entry points:
 - [ ] [archive-unpack](/tools/archive/cmds/archive-unpack/main.go) unpacks any known archive files
 - [x] [crx-dl](/tools/crx/cmds/crx-dl/main.go) downloads Chromium extension files
 - [x] [crx-extract](/tools/crx/cmds/crx-extract/main.go) extracts Chromium extension files
-- [ ] [ffmpeg-to720p](/tools/ffmpeg/cmds/ffmpeg-to720p) converts videos to x264 720p videos
-- [ ] [ffmpeg-to1080p](/tools/ffmpeg/cmds/ffmpeg-to1080p) converts videos to x264 1080p videos
-- [ ] [ffmpeg-tomp3](/tools/ffmpeg/cmds/ffmpeg-tomp3) converts videos to mp3 files
+- [x] [dns-iscensored](/tools/dns/cmds/dns-iscensored/main.go) checks whether a domain is censored
+- [ ] [ffmpeg-to720p](/tools/ffmpeg/cmds/ffmpeg-to720p/main.go) converts videos to x264 720p videos
+- [ ] [ffmpeg-to1080p](/tools/ffmpeg/cmds/ffmpeg-to1080p/main.go) converts videos to x264 1080p videos
+- [ ] [ffmpeg-tomp3](/tools/ffmpeg/cmds/ffmpeg-tomp3/main.go) converts videos to mp3 files
 - [ ] [git-serve](/tools/git/cmds/git-extract/main.go) serves a local git server
 - [x] [dyndns-goip](/tools/dyndns/cmds/dyndns-goip/main.go) updates `goip.de` DynDNS domains
 - [ ] [gs-totiff](/tools/gs/cmds/gs-totiff/main.go) converts documents to tiff images
