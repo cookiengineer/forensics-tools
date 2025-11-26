@@ -32,9 +32,9 @@ var dangerous_lifecycle_hooks []string = []string{
 
 func showUsage() {
 
-	fmt.Println("Usage: crx-dl <package-name>")
-	fmt.Println("Usage: crx-dl <package-name> <package-version>")
-	fmt.Println("Usage: crx-dl <package-scope> <package-name> <package-version>")
+	fmt.Println("Usage: npm-dl <package-name>")
+	fmt.Println("Usage: npm-dl <package-name> <package-version>")
+	fmt.Println("Usage: npm-dl <package-scope> <package-name> <package-version>")
 	fmt.Println("")
 	fmt.Println("Examples:")
 	fmt.Println("")
