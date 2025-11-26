@@ -57,10 +57,13 @@ cd /path/to/forensics-tools/toolchain;
 go run build.go;
 ```
 
-Alternatively, you can also simply use `go install` to install the binaries directly:
+Alternatively, you can also simply use `go install` on any of the tools in an isolated capacity:
 
 ```bash
-go install github.com/cookiengineer/forensics-tools/tools/npm/cmds/npm-dl@latest;
+cd /path/to/forensics-tools;
+
+cd /tools/npm;
+go install ./cmds/npm-dl;
 ```
 
 
