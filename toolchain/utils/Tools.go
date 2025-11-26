@@ -1,0 +1,28 @@
+package utils
+
+var Tools map[string]string = map[string]string{
+	"archive-pack":      "/tools/archive/cmds/archive-pack/main.go",
+	"archive-unpack":    "/tools/archive/cmds/archive-unpack/main.go",
+	"crx-dl":            "/tools/crx/cmds/crx-dl/main.go",
+	"crx-extract":       "/tools/crx/cmds/crx-extract/main.go",
+	"dns-iscensored":    "/tools/dns/cmds/dns-iscensored/main.go",
+	"ffmpeg-to720p":     "/tools/ffmpeg/cmds/ffmpeg-to720p/main.go",
+	"ffmpeg-to1080p":    "/tools/ffmpeg/cmds/ffmpeg-to1080p/main.go",
+	"ffmpeg-tomp3":      "/tools/ffmpeg/cmds/ffmpeg-tomp3/main.go",
+	"git-serve":         "/tools/git/cmds/git-serve/main.go",
+	"dyndns-goip":       "/tools/dyndns/cmds/dyndns-goip/main.go",
+	"gs-totiff":         "/tools/gs/cmds/gs-totiff/main.go",
+	"http-serve":        "/tools/http/cmds/http-serve/main.go",
+	"memdump-keepass":   "/tools/memdump/cmds/memdump-keepass/main.go",
+	"npm-dl":            "/tools/npm/cmds/npm-dl/main.go",
+	"reddit-archive":    "/tools/reddit/cmds/reddit-archive/main.go",
+	"sql-extract":       "/tools/sql/cmds/sql-extract/main.go",
+	"sql-tables":        "/tools/sql/cmds/sql-tables/main.go",
+	"torrent-magnetify": "/tools/torrent/cmds/torrent-magnetify/main.go",
+	"totp-extract":      "/tools/totp/cmds/totp-extract/main.go",
+	"yt-mp3":            "/tools/yt-dlp/cmds/yt-mp3/main.go",
+	"yt-mp4":            "/tools/yt-dlp/cmds/yt-mp4/main.go",
+	"yt-opus":           "/tools/yt-dlp/cmds/yt-opus/main.go",
+	"zip-bruteforce":    "/tools/zip/cmds/zip-bruteforce/main.go",
+	"zip-unmask":        "/tools/zip/cmds/zip-unmask/main.go",
+}

@@ -13,10 +13,9 @@ The [tools](/tools) folder is separated by use-case. Each of the tools' root fol
 a `README.md` explaining the purpose of the forensics tools inside them. Make sure to read
 them carefully.
 
-The [toolchain](/toolchain) folder contains two entry points:
+The [toolchain](/toolchain) folder contains one entry point:
 
 - The [build.go](/toolchain/build.go) which builds all binaries and a separate `install-forensics-tools` program.
-- The [install.go](/toolchain/install.go) which builds and installs a specific binary of a `<tool>/<cmd>` path.
 
 
 ## Tools / Features
@@ -29,7 +28,7 @@ The [toolchain](/toolchain) folder contains two entry points:
 - [ ] [ffmpeg-to720p](/tools/ffmpeg/cmds/ffmpeg-to720p/main.go) converts videos to x264 720p videos
 - [ ] [ffmpeg-to1080p](/tools/ffmpeg/cmds/ffmpeg-to1080p/main.go) converts videos to x264 1080p videos
 - [ ] [ffmpeg-tomp3](/tools/ffmpeg/cmds/ffmpeg-tomp3/main.go) converts videos to mp3 files
-- [ ] [git-serve](/tools/git/cmds/git-extract/main.go) serves a local git server
+- [ ] [git-serve](/tools/git/cmds/git-serve/main.go) serves a local git server
 - [x] [dyndns-goip](/tools/dyndns/cmds/dyndns-goip/main.go) updates `goip.de` DynDNS domains
 - [ ] [gs-totiff](/tools/gs/cmds/gs-totiff/main.go) converts documents to tiff images
 - [x] [http-serve](/tools/http/cmds/http-serve/main.go) serves a folder via HTTP
@@ -40,11 +39,42 @@ The [toolchain](/toolchain) folder contains two entry points:
 - [x] [sql-tables](/tools/sql/cmds/sql-tables/main.go) lists a table index of large SQL dump files
 - [x] [torrent-magnetify](/tools/torrent/cmds/torrent-magnetify/main.go) adds default trackers to torrent magnet links
 - [x] [totp-extract](/tools/totp/cmds/totp-extract/main.go) extracts OTP password seeds from screenshots or camera photos of QR codes
-- [ ] [youtube-mp3](/tools/yt-dlp/cmds/youtube-mp3/main.go) downloads streams as MP3 files
-- [ ] [youtube-mp4](/tools/yt-dlp/cmds/youtube-mp4/main.go) downloads streams as MP4 files
-- [ ] [youtube-opus](/tools/yt-dlp/cmds/youtube-opus/main.go) downloads streams as OPUS files
+- [ ] [yt-mp3](/tools/yt-dlp/cmds/yt-mp3/main.go) downloads streams as MP3 files
+- [ ] [yt-mp4](/tools/yt-dlp/cmds/yt-mp4/main.go) downloads streams as MP4 files
+- [ ] [yt-opus](/tools/yt-dlp/cmds/yt-opus/main.go) downloads streams as OPUS files
 - [x] [zip-bruteforce](/tools/totp/cmds/zip-bruteforce/main.go) bruteforces the password of a ZIP file
 - [x] [zip-unmask](/tools/totp/cmds/zip-unmask/main.go) unmasks ZIP files that have been XOR obfuscated
+
+
+## Building
+
+The [build.go](/toolchain/build.go) script builds all tool binaries and a separate `install-forensics-tools`
+program that can be deployed to another machine and executed there to install all the contained binaries.
+
+```bash
+# Build all tools and the installer
+cd /path/to/forensics-tools/toolchain;
+go run build.go;
+```
+
+Alternatively, you can also simply use `go install` to install the binaries directly:
+
+```bash
+go install github.com/cookiengineer/forensics-tools/tools/npm/cmds/npm-dl@latest;
+```
+
+
+## Installation
+
+```bash
+# Build the installer which contains all tool binaries
+cd /path/to/forensics-tools/toolchain;
+go run build.go;
+
+# Install all binaries to /usr/local/bin
+cd /path/to/forensics-tools/build;
+export PREFIX="/usr/local"; sudo install-forensics-tools;
+```
 
 
 ## License
