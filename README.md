@@ -34,7 +34,7 @@ The [toolchain](/toolchain) folder contains two entry points:
 - [ ] [gs-totiff](/tools/gs/cmds/gs-totiff/main.go) converts documents to tiff images
 - [x] [http-serve](/tools/http/cmds/http-serve/main.go) serves a folder via HTTP
 - [x] [memdump-keepass](/tools/memdump/cmds/memdump-keepass/main.go) finds a KeePass(XC) password in memory dump files
-- [ ] [npm-dl](/tools/npm/cmds/npm-dl/main.go) downloads and extracts specific package versions from NPM
+- [x] [npm-dl](/tools/npm/cmds/npm-dl/main.go) downloads and extracts specific packages from the NPM registry
 - [ ] [reddit-archive](/tools/reddit/cmds/reddit-archive/main.go) downloads subreddits and threads
 - [x] [sql-extract](/tools/sql/cmds/sql-extract/main.go) extracts a specific table from large SQL dump files
 - [x] [sql-tables](/tools/sql/cmds/sql-tables/main.go) lists a table index of large SQL dump files
