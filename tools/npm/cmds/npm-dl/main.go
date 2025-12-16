@@ -167,6 +167,11 @@ func main() {
 
 		}
 
+	} else {
+
+		showUsage()
+		os.Exit(1)
+
 	}
 
 	if package_name != "" && package_version != "" {
@@ -282,13 +287,6 @@ func main() {
 			fmt.Println("Error: ", err0.Error())
 			os.Exit(1)
 		}
-
-	} else {
-
-		fmt.Fprintln(os.Stderr, "ERROR: Unsupported package name or package version format")
-
-		showUsage()
-		os.Exit(1)
 
 	}
 
