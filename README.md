@@ -30,6 +30,7 @@ The [toolchain](/toolchain) folder contains one entry point:
 - [ ] [ffmpeg-tomp3](/tools/ffmpeg/cmds/ffmpeg-tomp3/main.go) converts videos to mp3 files
 - [ ] [git-serve](/tools/git/cmds/git-serve/main.go) serves a local git server
 - [x] [dyndns-goip](/tools/dyndns/cmds/dyndns-goip/main.go) updates `goip.de` DynDNS domains
+- [x] [fs-cleanup](/tools/fs/cmds/fs-cleanup/main.go) identifies and removes identical and similar files
 - [ ] [gs-totiff](/tools/gs/cmds/gs-totiff/main.go) converts documents to tiff images
 - [x] [http-serve](/tools/http/cmds/http-serve/main.go) serves a folder via HTTP
 - [x] [memdump-keepass](/tools/memdump/cmds/memdump-keepass/main.go) finds a KeePass(XC) password in memory dump files
@@ -44,6 +45,8 @@ The [toolchain](/toolchain) folder contains one entry point:
 - [ ] [yt-opus](/tools/yt-dlp/cmds/yt-opus/main.go) downloads streams as OPUS files
 - [x] [zip-bruteforce](/tools/totp/cmds/zip-bruteforce/main.go) bruteforces the password of a ZIP file
 - [x] [zip-unmask](/tools/totp/cmds/zip-unmask/main.go) unmasks ZIP files that have been XOR obfuscated
+
+// identical file finder? movie redundancy deleter? image redundancy deleter?
 
 
 ## Building
